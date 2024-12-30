@@ -21,7 +21,7 @@ let loadFolder loadFiles conf : Folder option =
             }
             |> Some
 
-let index loadFiles save conf : Folder option =
+let index loadFiles save (conf: FolderConf) : Folder option =
     loadFolder loadFiles conf |> Option.map save
 
 let refresh loadFiles save (folder: Folder) : Folder option =

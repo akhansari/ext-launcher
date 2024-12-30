@@ -1,5 +1,3 @@
-root = true
-
 [paket.*]
 insert_final_newline = false
 

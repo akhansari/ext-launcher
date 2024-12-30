@@ -3,16 +3,18 @@
   "isRoot": true,
   "tools": {
     "fantomas": {
-      "version": "6.2.3",
+      "version": "6.3.16",
       "commands": [
         "fantomas"
-      ]
+      ],
+      "rollForward": false
     },
     "paket": {
-      "version": "8.0.0",
+      "version": "9.0.2",
       "commands": [
         "paket"
-      ]
+      ],
+      "rollForward": false
     }
   }
 }

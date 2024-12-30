@@ -80,7 +80,7 @@ module private Implementations =
 
     let noNull s = if isNull s then "" else s
 
-    let printLaunchers folder =
+    let printLaunchers (folder: Folder) =
         let launchers =
             Table()
                 .AddColumns(
@@ -130,12 +130,13 @@ type IndexCommand() =
     inherit Command<IndexSettings>()
 
     override _.Execute(_, settings) =
-        fun _ ->
+        (fun _ ->
             App.index IO.getFiles Db.upsertFolder {
                 Path = currentPath
                 Pattern = Pattern.init settings.Pattern settings.IsRegex
                 Launchers = Array.empty
             }
+        )
         |> withLoader
         |> function
             | Some folder ->
@@ -193,8 +194,8 @@ type SetLauncherCommand() =
                     folder.Launchers.[index] <- launcher
                     folder
                 | None -> { folder with Launchers = Array.insertAt 0 launcher folder.Launchers }
-            |> Db.upsertFolder
-            |> printLaunchers
+                |> Db.upsertFolder
+                |> printLaunchers
 
             0
 
