@@ -22,7 +22,7 @@
     <RepositoryUrl>https://github.com/d-edge/extLauncher</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <WarningsAsErrors>FS0025</WarningsAsErrors>
-    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <ItemGroup>
     <None Include="paket.references" />

@@ -324,21 +324,15 @@ module Program =
                 fun launcher ->
                     launcher.SetDescription("Add, update or remove a launcher [italic](optional)[/].")
 
-                    launcher
-                        .AddCommand<SetLauncherCommand>("set")
-                        .WithDescription("Add or update a launcher.")
+                    launcher.AddCommand<SetLauncherCommand>("set").WithDescription("Add or update a launcher.")
                     |> ignore
 
-                    launcher
-                        .AddCommand<RemoveLauncherCommand>("remove")
-                        .WithDescription("Remove a launcher.")
+                    launcher.AddCommand<RemoveLauncherCommand>("remove").WithDescription("Remove a launcher.")
                     |> ignore
             )
             |> ignore
 
-            conf
-                .AddCommand<DeindexCommand>("deindex")
-                .WithDescription("Clears the current index.")
+            conf.AddCommand<DeindexCommand>("deindex").WithDescription("Clears the current index.")
             |> ignore
 
             conf
@@ -346,9 +340,7 @@ module Program =
                 .WithDescription("Prints the current pattern and all the indexed files.")
             |> ignore
 
-            conf
-                .AddCommand<RefreshCommand>("refresh")
-                .WithDescription("Updates the current index.")
+            conf.AddCommand<RefreshCommand>("refresh").WithDescription("Updates the current index.")
             |> ignore
 
             conf.AddExample(
